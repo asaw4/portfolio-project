@@ -7,5 +7,5 @@ def allblogs(request):
     return render(request,'blog/allblogs.html',{'blogs':blogs})
 
 def detail(request, blog_id):
-    bg=get_object_or_404.(Blog,pk=blog_id)
+    bg=get_object_or_404(Blog,pk=blog_id)
     return render(request,'blog/detail.html',{'blog':bg})
