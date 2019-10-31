@@ -8,3 +8,8 @@ class Blog(models.Model):
 	text=models.TextField()
 	image=models.ImageField(upload_to='MEDIA_ROOT')
 
+	def __str__(self):
+		return self.title
+
+	def summary(self):
+		return self.text[:100]
