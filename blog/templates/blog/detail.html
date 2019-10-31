@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Blogs</title>
+    <title>{{ blog.title }}</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -32,7 +32,7 @@
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
   </head>
-  <body>
+  <body height="100%">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Blog Website</a>
@@ -60,22 +60,19 @@
 
     <main role="main">
       <div class="container">
-     <h1 class="text-center pt-3">Welcome to Astha's Blogs</h1>
+     <h1 class="text-center pt-3">{{blog.title}}</h1>
+     <p>{{blog.pub_date}}</p>
      <br>
-     <br>
-     <h2>Latest Post :</h2>
-     <hr />
-       </div>
+     <img src="{{blog.image.url}}" alt="blog image" class="img-fluid" height="200" width="200">
+     <p>{{blog.text}}</p>
+      </div>
     </main>
 
-    <a href="#">{{blog.title}}</a>
-    <p>{{blog.pub_date}}</p>
-    <img src="{{blog.image.url}}" alt="blog image" class="img-fluid" height="200" width="200">
-    <p>{{blog.text}}</p>
 
-    {% endfor %}
 
-    <footer class="text-muted">
+
+
+    <footer class="footer navbar-fixed-bottom">
       <div class="container test-center">
         <p>Copyright Astha Awasthi {% now "Y" %}</p>
       </div>

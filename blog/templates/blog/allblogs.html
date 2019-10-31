@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
-  <title>Blogs</title>
+  <title>Astha Awasthi | Blogs</title>
 
 
   <!-- Bootstrap core CSS -->
@@ -53,7 +53,7 @@
             <a class="nav-link" href="https://www.behance.net/asthaawast61f1">Behance</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% static 'AsthaCV.docx' %}">Resume</a>
+            <a class="nav-link active" href="{% static 'AsthaCV.docx' %}">Resume</a>
           </li>
         </ul>
       </div>
@@ -72,7 +72,7 @@
 
   {% for blog in blogs.all %}
     <h4>
-      <a href="#">{{blog.title}}</a>
+      <a href="{% url 'detail' blog.id %}">{{blog.title}}</a>
     </h4>
     <p>{{blog.pub_date}}</p>
     <img src="{{blog.image.url}}" alt="blog image" class="img-fluid" height="200" width="200">
@@ -80,7 +80,7 @@
 
   {% endfor %}
 
-  <footer class="text-muted">
+  <footer class="footer navbar-fixed-bottom">
     <div class="container test-center">
       <p>Copyright Astha Awasthi {% now "Y" %}</p>
     </div>
