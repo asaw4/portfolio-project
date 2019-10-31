@@ -70,15 +70,23 @@
     </div>
   </main>
 
-  {% for blog in blogs.all %}
-    <h4>
-      <a href="{% url 'detail' blog.id %}">{{blog.title}}</a>
-    </h4>
-    <p>{{blog.pub_date}}</p>
-    <img src="{{blog.image.url}}" alt="blog image" class="img-fluid" height="200" width="200">
-    <p>{{blog.summary}}</p>
+  <div class="container">
+    <div class="card-group">
 
-  {% endfor %}
+        {% for blog in blogs.all %}
+        <img src="{{blog.image.url}}" alt="blog image" class="img-fluid" height="200" width="200">
+        <div class="card-body">
+          <h4 class="card-title">
+            <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
+            <a href="{% url 'detail' blog.id %}">{{blog.title}}</a>
+          </h4>
+
+          <p class="card-text">{{blog.summary}}</p>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+  </div>
 
   <footer class="footer navbar-fixed-bottom">
     <div class="container test-center">
